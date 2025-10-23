@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <!-- मेटा टैग्स: वेबसाइट को मोबाइल और SEO के लिए तैयार करते हैं -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सुमित पांडे | वेबसाइट डेवलपर पोर्टफोलियो</title>
+    <!-- Tailwind CSS CDN - स्टाइलिंग के लिए आवश्यक -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- फ़ॉन्ट को आकर्षक बनाने के लिए Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* कस्टम स्टाइलिंग: इंटर फ़ॉन्ट को पूरी वेबसाइट पर लागू करना */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* हल्का ग्रे बैकग्राउंड */
+        }
+        /* मुख्य सेक्शन कंटेनर को अच्छी शैडो (छाया) देना */
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- 1. हेडर/नेविगेशन बार (Header/Navigation Bar) -->
+    <header class="bg-white card-shadow sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- लोगो या नाम -->
+            <h1 class="text-2xl font-bold text-indigo-600">सुमित पांडे | पोर्टफोलियो</h1>
+            
+            <!-- नेविगेशन लिंक्स (मोबाइल में भी काम करेंगे) -->
+            <nav class="space-x-4 hidden md:block">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">होम</a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">मेरे बारे में</a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">प्रोजेक्ट्स</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">संपर्क</a>
+            </nav>
+            
+            <!-- मोबाइल मेन्यू बटन (JavaScript द्वारा नियंत्रित) -->
+            <button id="menu-button" class="md:hidden text-gray-500 hover:text-indigo-600 focus:outline-none">
+                <!-- SVG Icon for Menu -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- मोबाइल मेन्यू ड्रॉपडाउन -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <a href="#home" class="block py-2 px-4 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">होम</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">मेरे बारे में</a>
+            <a href="#projects" class="block py-2 px-4 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">प्रोजेक्ट्स</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">संपर्क</a>
+        </div>
+    </header>
+
+    <!-- मुख्य सामग्री कंटेनर -->
+    <main class="flex-grow">
+        
+        <!-- 2. होम/हीरो सेक्शन (Home/Hero Section) -->
+        <section id="home" class="pt-16 pb-24 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <!-- प्रोफाइल इमेज (अगर कोई इमेज न हो तो टेक्स्ट प्लेसहोल्डर) -->
+                <div class="w-32 h-32 rounded-full mx-auto mb-6 bg-indigo-700 flex items-center justify-center border-4 border-white overflow-hidden">
+                    <!-- यह एक Placeholder इमेज URL है। आप इसे अपनी असली इमेज से बदल सकते हैं। -->
+                    <img src="https://placehold.co/128x128/ffffff/000000?text=SP" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/128x128/ffffff/000000?text=SUMIT';" 
+                         alt="उपयोगकर्ता प्रोफाइल छवि" class="w-full h-full object-cover">
+                </div>
+                
+                <h2 class="text-5xl font-extrabold leading-tight mb-4 animate-fadeIn">नमस्ते, मैं सुमित पांडे हूँ</h2>
+                <p class="text-xl mb-8 opacity-90">मैं एक जिज्ञासु **वेबसाइट डेवलपर** और रचनात्मक विचारक हूँ।</p>
+                
+                <!-- कॉल टू एक्शन बटन -->
+                <a href="#contact" class="inline-block bg-white text-indigo-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-50 transition duration-300 transform hover:scale-105">
+                    मुझसे संपर्क करें
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. मेरे बारे में सेक्शन (About Me Section) -->
+        <section id="about" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center border-b-2 border-indigo-300 pb-2">मेरे बारे में</h3>
+                
+                <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                    मैं **वेबसाइट डेवलपमेंट** में एक उत्साही व्यक्ति हूँ, जिसका उद्देश्य जटिल समस्याओं को सरल और सुंदर समाधानों में बदलना है।
+                    पिछले **5 वर्षों** से, मैं **फ्रंट-एंड डेवलपमेंट** और **सॉफ़्टवेयर इंजीनियरिंग** पर काम कर रहा हूँ।
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    मेरा मानना है कि हर प्रोजेक्ट एक कहानी कहता है, और मैं अपने कौशल का उपयोग करके उस कहानी को स्पष्टता और प्रभाव के साथ दुनिया के सामने लाना चाहता हूँ।
+                </p>
+                
+                <!-- स्किल्स/कौशल की लिस्ट (वेब डेवलपमेंट के अनुसार अद्यतन) -->
+                <div class="mt-10">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-4">मुख्य कौशल:</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-indigo-100 text-indigo-700 text-sm font-medium px-4 py-1.5 rounded-full hover:bg-indigo-200 transition">HTML & CSS</span>
+                        <span class="bg-green-100 text-green-700 text-sm font-medium px-4 py-1.5 rounded-full hover:bg-green-200 transition">JavaScript (ES6+)</span>
+                        <span class="bg-yellow-100 text-yellow-700 text-sm font-medium px-4 py-1.5 rounded-full hover:bg-yellow-200 transition">रिस्पॉन्सिव डिज़ाइन</span>
+                        <span class="bg-red-100 text-red-700 text-sm font-medium px-4 py-1.5 rounded-full hover:bg-red-200 transition">UI/UX सिद्धांत</span>
+                        <span class="bg-blue-100 text-blue-700 text-sm font-medium px-4 py-1.5 rounded-full hover:bg-blue-200 transition">Git और GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. प्रोजेक्ट्स सेक्शन (Projects Section) -->
+        <section id="projects" class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-3xl font-bold text-gray-800 mb-12 text-center border-b-2 border-purple-300 pb-2">मेरे प्रोजेक्ट्स</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- प्रोजेक्ट कार्ड 1: ई-कॉमर्स डैशबोर्ड -->
+                    <div class="bg-white rounded-xl overflow-hidden card-shadow hover:shadow-xl transition duration-300">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">ई-कॉमर्स डैशबोर्ड</h4>
+                            <p class="text-gray-600 mb-4 text-sm">
+                                **Tailwind CSS** और **Vanilla JavaScript** का उपयोग करके बनाया गया एक **रिस्पॉन्सिव डैशबोर्ड इंटरफ़ेस**। इसमें डेटा विज़ुअलाइज़ेशन के लिए इंटरैक्टिव चार्ट्स शामिल हैं।
+                            </p>
+                            <!-- यहां अपने असली प्रोजेक्ट का URL डालें -->
+                            <a href="#link-to-dashboard-project" class="text-indigo-600 font-medium hover:text-indigo-800 transition">GitHub/Live Demo लिंक →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- प्रोजेक्ट कार्ड 2: टेक्नोलॉजी ब्लॉगिंग प्लेटफॉर्म -->
+                    <div class="bg-white rounded-xl overflow-hidden card-shadow hover:shadow-xl transition duration-300">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">एडवांस्ड टेक्नोलॉजी ब्लॉगिंग प्लेटफॉर्म</h4>
+                            <p class="text-gray-600 mb-4 text-sm">
+                                **Node.js** और **MongoDB** के साथ विकसित, पूरी तरह से **स्केलेबल फुल-स्टैक ब्लॉग**। इसमें **SEO ऑप्टिमाइज़ेशन** और **एडमिन पैनल** की सुविधा है।
+                            </p>
+                            <!-- यहां अपने असली प्रोजेक्ट का URL डालें -->
+                            <a href="#link-to-blog-project" class="text-indigo-600 font-medium hover:text-indigo-800 transition">GitHub/Live Demo लिंक →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- प्रोजेक्ट कार्ड 3: स्टैटिक लैंडिंग पेज (UPDATED) -->
+                    <div class="bg-white rounded-xl overflow-hidden card-shadow hover:shadow-xl transition duration-300">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">क्लाइंट के लिए स्टैटिक लैंडिंग पेज</h4>
+                            <p class="text-gray-600 mb-4 text-sm">
+                                एक छोटे व्यवसाय के लिए **उच्च-प्रदर्शन वाला लैंडिंग पेज**। बेहतरीन लोडिंग स्पीड और **मोबाइल-फर्स्ट रिस्पॉन्सिव डिज़ाइन** सुनिश्चित किया गया।
+                            </p>
+                            <!-- यहां अपने असली प्रोजेक्ट का URL डालें -->
+                            <a href="#link-to-static-page-project" class="text-indigo-600 font-medium hover:text-indigo-800 transition">GitHub/Live Demo लिंक →</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. संपर्क सेक्शन (Contact Section) -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center border-b-2 border-indigo-300 pb-2">संपर्क करें</h3>
+                <p class="text-lg text-gray-600 mb-8 text-center">
+                    अगर आप किसी प्रोजेक्ट पर सहयोग करना चाहते हैं या बस नमस्ते कहना चाहते हैं, तो बेझिझक मुझसे संपर्क करें।
+                </p>
+                
+                <!-- संपर्क फॉर्म -->
+                <form class="bg-gray-50 p-8 rounded-xl card-shadow">
+                    <div class="mb-6">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">नाम</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150" placeholder="आपका पूरा नाम">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">ईमेल</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150" placeholder="आपका ईमेल पता">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">संदेश</label>
+                        <textarea id="message" name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150" placeholder="आप क्या लिखना चाहते हैं..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-300 transform hover:scale-[1.01]">
+                        संदेश भेजें
+                    </button>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- 6. फुटर (Footer) -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">&copy; 2025 सुमित पांडे। सभी अधिकार सुरक्षित।</p>
+            <div class="mt-2 text-xs opacity-75">
+                <a href="#" class="hover:text-indigo-400">प्राइवेसी पॉलिसी</a> | 
+                <a href="#" class="hover:text-indigo-400">नियम और शर्तें</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript: इंटरैक्टिविटी के लिए -->
+    <script>
+        // मोबाइल मेन्यू टॉगल करने का फ़ंक्शन
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // मोबाइल मेन्यू लिंक्स पर क्लिक करने के बाद मेन्यू को बंद कर देना
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // फॉर्म सबमिशन हैंडलिंग (यह केवल उदाहरण है, असली सर्वर साइड प्रोसेसिंग आवश्यक है)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault(); // फॉर्म को डिफ़ॉल्ट रूप से सबमिट होने से रोकना
+            
+            const form = e.target;
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+
+            // फॉर्म डेटा को कंसोल में लॉग करना (जाँच के लिए)
+            console.log("संपर्क फ़ॉर्म सबमिट हुआ:");
+            console.log("नाम:", name);
+            console.log("ईमेल:", email);
+            console.log("संदेश:", message);
+
+            // एक साधारण UI संदेश दिखाएँ (अलर्ट का उपयोग न करें)
+            alertMessage('धन्यवाद! आपका संदेश सफलतापूर्वक भेज दिया गया है।', 'success');
+
+            // फ़ॉर्म को रीसेट करें
+            form.reset();
+        });
+
+        /**
+         * कस्टम संदेश बॉक्स फ़ंक्शन (alert() की जगह)
+         * @param {string} msg - प्रदर्शित करने के लिए संदेश
+         * @param {string} type - संदेश का प्रकार ('success' or 'error')
+         */
+        function alertMessage(msg, type) {
+            let messageBox = document.getElementById('custom-alert');
+            
+            if (!messageBox) {
+                // अगर संदेश बॉक्स मौजूद नहीं है, तो नया बनाएँ
+                messageBox = document.createElement('div');
+                messageBox.id = 'custom-alert';
+                messageBox.className = 'fixed top-4 right-4 p-4 rounded-lg shadow-xl text-white transition-opacity duration-300 z-50';
+                document.body.appendChild(messageBox);
+            }
+            
+            // स्टाइलिंग सेट करें
+            messageBox.textContent = msg;
+            messageBox.classList.remove('bg-green-500', 'bg-red-500', 'opacity-0');
+            
+            if (type === 'success') {
+                messageBox.classList.add('bg-green-500');
+            } else if (type === 'error') {
+                messageBox.classList.add('bg-red-500');
+            }
+            
+            // संदेश दिखाना
+            messageBox.classList.add('opacity-100');
+
+            // 3 सेकंड के बाद संदेश को हटा देना
+            setTimeout(() => {
+                messageBox.classList.remove('opacity-100');
+                messageBox.classList.add('opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+
